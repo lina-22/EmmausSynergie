@@ -21,7 +21,7 @@ Route::get('/', function () {
 // Route for roles
 Route::get('roles', [RoleController::class, 'index'])->name('role.all');
 Route::get('roles/{id}', [RoleController::class, 'show'])->name('role.show');
-Route::post('roles', [RoleController::class, 'store'])->name('role.add');
+Route::post('roles', [RoleController::class, 'store'])->name('role.store');
 Route::get('/roles/create', [RoleController::class, 'create'])->name('role.create');
 Route::get('/roles/{id}/edit', [RoleController::class, 'edit'])->name('role.edit');
 Route::put('roles/{id}', [RoleController::class, 'update'])->name('role.update');

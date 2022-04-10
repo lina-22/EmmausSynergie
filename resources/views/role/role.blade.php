@@ -14,7 +14,7 @@ Page Role
         </th>
     </thead>
     <tbody>
-        @foreach ($roles as $oneRole)
+        @foreach ($role as $oneRole)
            <tr>
                <td>{{$oneRole->name}}</td>
                <td>aaa</td>

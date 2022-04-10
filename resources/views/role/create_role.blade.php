@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row">
 
-                <form action="{{ route('role.create') }}" method="post">
+                <form action="{{ route('role.store') }}" method="post">
                     @csrf
 
                     <div class="mb-3">
