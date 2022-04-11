@@ -27,7 +27,7 @@ class StructureController extends Controller
      */
     public function create()
     {
-        return view('structure.create');
+        return view('structure.create_structure');
     }
 
     /**
@@ -38,19 +38,16 @@ class StructureController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validated = $request->validate([
             'name' => 'string|required',
             'type' => 'string|required'
         ]);
-        if ($validator->fails()) {
-            $res['message'] = $validator->errors()->first();
-        } else {
+
             $structure = new Structure();
             $structure->name = $request->name;
             $structure->type = $request->type;
 
             $structure->save();
-        }
         return redirect()->action([StructureController::class, 'index'])->with('message', 'Structure Add Successfully!');
     }
 
@@ -63,7 +60,7 @@ class StructureController extends Controller
     public function show($id)
     {
         $structure = Structure::findOrFail($id);
-        return view('show_structure', compact('structure'));
+        return view('structure.show_structure', compact('structure'));
     }
 
     /**

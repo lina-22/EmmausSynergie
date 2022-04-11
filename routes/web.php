@@ -38,9 +38,9 @@ Route::delete('roles/{id}', [RoleController::class, 'destroy'])->name('role.dele
 
 // Route for Structures
 Route::get('structures', [StructureController::class, 'index'])->name('structure.all');
-Route::get('structures/{id}', [StructureController::class, 'show'])->name('structure.show');
 Route::post('structures', [StructureController::class, 'store'])->name('structure.store');
 Route::get('/structures/create', [StructureController::class, 'create'])->name('structure.create');
+Route::get('structures/{id}', [StructureController::class, 'show'])->name('structure.show');
 Route::get('/structures/{id}/edit', [StructureController::class, 'edit'])->name('structure.edit');
 Route::put('structures/{id}', [StructureController::class, 'update'])->name('structure.update');
 Route::delete('structures/{id}', [StructureController::class, 'destroy'])->name('structure.delete');
