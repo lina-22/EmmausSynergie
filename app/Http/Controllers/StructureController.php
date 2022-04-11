@@ -85,11 +85,12 @@ class StructureController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $role = Structure::findOrFail($id);
-        $role->name = $request->name;
-        $role->save();
+       $structure = Structure::findOrFail($id);
+       $structure->name = $request->name;
+       $structure->type = $request->type;
+       $structure->save();
         return redirect()->action(
-            [RoleController::class, 'index']
+            [StructureController::class, 'index']
         )->with('message', 'structure update succefully!');
     }
 
@@ -101,11 +102,11 @@ class StructureController extends Controller
      */
     public function destroy($id)
     {
-        $role = Structure::findOrFail($id);
-        $role->delete();
+        $structure = Structure::findOrFail($id);
+        $structure->delete();
         return redirect()->action(
-       [RoleController::class, 'index']
-        )->with('message', 'structure delete succefully!');
+       [StructureController::class, 'index']
+        )->with('message', 'structure delete successfully!');
     }
 
 }
