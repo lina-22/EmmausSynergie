@@ -25,41 +25,21 @@ Structure
     passages du Lorem Ipsum, et, plus récemment,
     par son</h4>
 
-    <form action="">
-        helloooo
-    </form>
-    <form action="{{ route('structure.store') }}" method="post">
-        @csrf
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" name="name">
+    <div class="container">
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
+        <div class="row">
+            @foreach ($structure as $onestructure)
+                <div class="col-md-3">
+                    <h3>{{ $onestructure->name }}</h3>
+                    <h3>{{ $onestructure->type }}</h3>
+                </div>
+            @endforeach
         </div>
-        <div class="mb-3">
-            <label for="type" class="form-label">Type</label>
-            <textarea name="type" id="type" class="form-control" rows="5"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
-{{-- <table class="table">
-    @csrf
-    <thead>
-        <th>
-           <td>Name</td>
-           <td>Type</td>
-
-        </th>
-    </thead>
-    <tbody>
-        @foreach ($structures as $oneStructure)
-        <div class="col-md-3">
-
-            <h3>{{$oneStructure->name}}</h3>
-            <h3>{{$oneStructure->type}}</h3>
-        </div>
-        @endforeach
-
-    </tbody> --}}
-</table>
+    </div>
 
 @endsection
