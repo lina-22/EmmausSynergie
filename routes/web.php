@@ -15,8 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcomeEmmaus');
 });
 // Route for roles
 Route::get('roles', [RoleController::class, 'index'])->name('role.all');
