@@ -20,10 +20,10 @@ Route::get('/', function () {
 });
 // Route for roles
 Route::get('roles', [RoleController::class, 'index'])->name('role.all');
-Route::get('roles/{id}', [RoleController::class, 'show'])->name('role.show');
 Route::post('roles', [RoleController::class, 'store'])->name('role.store');
-Route::get('/roles/create', [RoleController::class, 'create'])->name('role.create');
-Route::get('/roles/{id}/edit', [RoleController::class, 'edit'])->name('role.edit');
+Route::get('roles/create', [RoleController::class, 'create'])->name('role.create');
+Route::get('roles/{id}', [RoleController::class, 'show'])->name('role.show');
+Route::get('roles/{id}/edit', [RoleController::class, 'edit'])->name('role.edit');
 Route::put('roles/{id}', [RoleController::class, 'update'])->name('role.update');
 Route::delete('roles/{id}', [RoleController::class, 'destroy'])->name('role.delete');
 
@@ -39,11 +39,22 @@ Route::delete('roles/{id}', [RoleController::class, 'destroy'])->name('role.dele
 // Route for Structures
 Route::get('structures', [StructureController::class, 'index'])->name('structure.all');
 Route::post('structures', [StructureController::class, 'store'])->name('structure.store');
-Route::get('/structures/create', [StructureController::class, 'create'])->name('structure.create');
+Route::get('structures/create', [StructureController::class, 'create'])->name('structure.create');
 Route::get('structures/{id}', [StructureController::class, 'show'])->name('structure.show');
-Route::get('/structures/{id}/edit', [StructureController::class, 'edit'])->name('structure.edit');
+Route::get('structures/{id}/edit', [StructureController::class, 'edit'])->name('structure.edit');
 Route::put('structures/{id}', [StructureController::class, 'update'])->name('structure.update');
 Route::delete('structures/{id}', [StructureController::class, 'destroy'])->name('structure.delete');
+
+// Route for Activites
+Route::get('Activites', [ActivityController::class, 'index'])->name('activity.all');
+Route::post('Activites', [ActivityController::class, 'store'])->name('activity.store');
+Route::get('Activites/create', [ActivityController::class, 'create'])->name('activity.create');
+Route::get('Activites/{id}', [ActivityController::class, 'show'])->name('activity.show');
+Route::get('Activites/{id}/edit', [ActivityController::class, 'edit'])->name('activity.edit');
+Route::put('Activites/{id}', [ActivityController::class, 'update'])->name('activity.update');
+Route::delete('Activites/{id}', [ActivityController::class, 'destroy'])->name('activity.delete');
+
+
 
 // Route for Town
 // Route::get('events', [EventsController::class, 'index'])->name('event.all');
