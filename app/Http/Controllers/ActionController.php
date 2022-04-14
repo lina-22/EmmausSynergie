@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Action;
 use Illuminate\Http\Request;
 
 class ActionController extends Controller
@@ -13,7 +14,9 @@ class ActionController extends Controller
      */
     public function index()
     {
-        //
+        $action = Action::all();
+        //  dd($action);
+        return view('action.action', compact('action'));
     }
 
     /**
@@ -23,7 +26,7 @@ class ActionController extends Controller
      */
     public function create()
     {
-        //
+        return view('action.create_action');
     }
 
     /**
@@ -34,7 +37,17 @@ class ActionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'string|required',
+            'type' => 'string|required'
+        ]);
+
+            $action = new Action();
+            $action->name = $request->name;
+            $action->type = $request->type;
+
+            $action->save();
+        return redirect()->action([ActionController::class, 'index'])->with('message', 'Action Add Successfully!');
     }
 
     /**
@@ -45,7 +58,8 @@ class ActionController extends Controller
      */
     public function show($id)
     {
-        //
+        $action = Action::findOrFail($id);
+        return view('action.show_action', compact('action'));
     }
 
     /**
@@ -56,7 +70,9 @@ class ActionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $action = Action::findOrFail($id);
+
+        return view('action.edit_action', compact('action'));
     }
 
     /**
@@ -68,7 +84,13 @@ class ActionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $action = Action::findOrFail($id);
+        $action->name = $request->name;
+        $action->type = $request->type;
+        $action->save();
+         return redirect()->action(
+             [ActionController::class, 'index']
+         )->with('message', 'action update succefully!');
     }
 
     /**
@@ -79,6 +101,10 @@ class ActionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $action = Action::findOrFail($id);
+        $action->delete();
+        return redirect()->action(
+       [ActionController::class, 'index']
+        )->with('message', 'action delete successfully!');
     }
 }
