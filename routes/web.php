@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ActionController;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\RapportController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StructureController;
 use Illuminate\Support\Facades\Route;
@@ -50,13 +53,13 @@ Route::delete('rapports/{id}', [RapportController::class, 'destroy'])->name('rap
 
 
 // Route for Activites
-Route::get('Activites', [ActivityController::class, 'index'])->name('activity.all');
-Route::post('Activites', [ActivityController::class, 'store'])->name('activity.store');
-Route::get('Activites/create', [ActivityController::class, 'create'])->name('activity.create');
-Route::get('Activites/{id}', [ActivityController::class, 'show'])->name('activity.show');
-Route::get('Activites/{id}/edit', [ActivityController::class, 'edit'])->name('activity.edit');
-Route::put('Activites/{id}', [ActivityController::class, 'update'])->name('activity.update');
-Route::delete('Activites/{id}', [ActivityController::class, 'destroy'])->name('activity.delete');
+Route::get('activites', [ActivityController::class, 'index'])->name('activity.all');
+Route::post('activites', [ActivityController::class, 'store'])->name('activity.store');
+Route::get('activites/create', [ActivityController::class, 'create'])->name('activity.create');
+Route::get('activites/{id}', [ActivityController::class, 'show'])->name('activity.show');
+Route::get('activites/{id}/edit', [ActivityController::class, 'edit'])->name('activity.edit');
+Route::put('activites/{id}', [ActivityController::class, 'update'])->name('activity.update');
+Route::delete('activites/{id}', [ActivityController::class, 'destroy'])->name('activity.delete');
 
 
 // // Route for Actions
