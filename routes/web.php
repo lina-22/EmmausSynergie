@@ -36,14 +36,15 @@ Route::delete('roles/{id}', [RoleController::class, 'destroy'])->name('role.dele
 // Route::put('users/{id}', [UserController::class, 'update'])->name('user.update');
 // Route::delete('users/{id}', [UserController::class, 'destroy'])->name('user.delete');
 
-// Route for Structures
-Route::get('structures', [StructureController::class, 'index'])->name('structure.all');
-Route::post('structures', [StructureController::class, 'store'])->name('structure.store');
-Route::get('structures/create', [StructureController::class, 'create'])->name('structure.create');
-Route::get('structures/{id}', [StructureController::class, 'show'])->name('structure.show');
-Route::get('structures/{id}/edit', [StructureController::class, 'edit'])->name('structure.edit');
-Route::put('structures/{id}', [StructureController::class, 'update'])->name('structure.update');
-Route::delete('structures/{id}', [StructureController::class, 'destroy'])->name('structure.delete');
+// Route for Rapport
+Route::get('rapports', [RapportController::class, 'index'])->name('rapport.all');
+Route::get('rapports/{id}', [RapportController::class, 'show'])->name('rapport.show');
+Route::post('rapports', [RapportController::class, 'store'])->name('rapport.add');
+Route::get('/rapports/create', [RapportController::class, 'create'])->name('rapport.create');
+Route::get('/rapports/{id}/edit', [RapportController::class, 'edit'])->name('rapport.edit');
+Route::put('rapports/{id}', [RapportController::class, 'update'])->name('rapport.update');
+Route::delete('rapports/{id}', [RapportController::class, 'destroy'])->name('rapport.delete');
+
 
 // Route for Activites
 Route::get('Activites', [ActivityController::class, 'index'])->name('activity.all');
@@ -55,24 +56,14 @@ Route::put('Activites/{id}', [ActivityController::class, 'update'])->name('activ
 Route::delete('Activites/{id}', [ActivityController::class, 'destroy'])->name('activity.delete');
 
 
-
-// Route for Town
-// Route::get('events', [EventsController::class, 'index'])->name('event.all');
-// Route::get('events/{id}', [EventsController::class, 'show'])->name('event.show');
-// Route::post('events', [EventsController::class, 'store'])->name('event.add');
-// Route::get('/events/create', [EventsController::class, 'create'])->name('event.create');
-// Route::get('/events/{id}/edit', [EventsController::class, 'edit'])->name('event.edit');
-// Route::put('events/{id}', [EventsController::class, 'update'])->name('event.update');
-// Route::delete('events/{id}', [EventsController::class, 'destroy'])->name('event.delete');
-
-// // Route for ActivitiesReport
-// Route::get('activities', [ActivitiesReportController::class, 'index'])->name('activitie.all');
-// Route::get('activities/{id}', [ActivitiesReportController::class, 'show'])->name('activitie.show');
-// Route::post('activities', [ActivitiesReportController::class, 'store'])->name('activitie.add');
-// Route::get('/activities/create', [ActivitiesReportController::class, 'create'])->name('activitie.create');
-// Route::get('/activities/{id}/edit', [ActivitiesReportController::class, 'edit'])->name('activitie.edit');
-// Route::put('activities/{id}', [ActivitiesReportController::class, 'update'])->name('activitie.update');
-// Route::delete('activities/{id}', [ActivitiesReportController::class, 'destroy'])->name('activitie.delete');
+// // Route for Actions
+Route::get('actions', [ActionController::class, 'index'])->name('action.all');
+Route::get('actions/{id}', [ActionController::class, 'show'])->name('action.show');
+Route::post('actions', [ActionController::class, 'store'])->name('action.add');
+Route::get('/actions/create', [ActionController::class, 'create'])->name('action.create');
+Route::get('/actions/{id}/edit', [ActionController::class, 'edit'])->name('action.edit');
+Route::put('actions/{id}', [ActionController::class, 'update'])->name('action.update');
+Route::delete('actions/{id}', [ActionController::class, 'destroy'])->name('action.delete');
 
 // // Route for Town
 // Route::get('towns', [TownController::class, 'index'])->name('town.all');
@@ -83,7 +74,7 @@ Route::delete('Activites/{id}', [ActivityController::class, 'destroy'])->name('a
 // Route::put('towns/{id}', [TownController::class, 'update'])->name('town.update');
 // Route::delete('towns/{id}', [TownController::class, 'destroy'])->name('town.delete');
 
-// // Route for Structures
+// // Route for Partner
 // Route::get('partners', [PartnerController::class, 'index'])->name('partner.all');
 // Route::get('partners/{id}', [PartnerController::class, 'show'])->name('partner.show');
 // Route::post('partners', [PartnerController::class, 'store'])->name('partner.add');
@@ -91,3 +82,12 @@ Route::delete('Activites/{id}', [ActivityController::class, 'destroy'])->name('a
 // Route::get('/partners/{id}/edit', [PartnerController::class, 'edit'])->name('partner.edit');
 // Route::put('partners/{id}', [PartnerController::class, 'update'])->name('partner.update');
 // Route::delete('partners/{id}', [PartnerController::class, 'destroy'])->name('partner.delete');
+
+// demo extra Route for Structures
+Route::get('structures', [StructureController::class, 'index'])->name('structure.all');
+Route::post('structures', [StructureController::class, 'store'])->name('structure.store');
+Route::get('structures/create', [StructureController::class, 'create'])->name('structure.create');
+Route::get('structures/{id}', [StructureController::class, 'show'])->name('structure.show');
+Route::get('structures/{id}/edit', [StructureController::class, 'edit'])->name('structure.edit');
+Route::put('structures/{id}', [StructureController::class, 'update'])->name('structure.update');
+Route::delete('structures/{id}', [StructureController::class, 'destroy'])->name('structure.delete');
