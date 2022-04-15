@@ -1,9 +1,9 @@
 @extends("template")
 @section('titre')
-    Page Create oneStructure
+    Page Create Ville
 @endsection
 @section('contenu')
-    <h1>create Structure</h1>
+    <h1>create Ville</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -14,16 +14,13 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('rapport.store') }}" method="post">
+    <form action="{{ route('ville.store') }}" method="post">
         @csrf
         <div class="mb-3">
-            <label for="annee" class="form-label">annee</label>
-            <input type="annee" class="form-control" id="annee" name="annee">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
         </div>
-        <div class="mb-3">
-            <label for="fichier" class="form-label">fichier</label>
-            <textarea name="fichier" id="fichier" class="form-control" rows="5"></textarea>
-        </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     @endsection

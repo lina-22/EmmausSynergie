@@ -1,7 +1,7 @@
 @extends("template")
 
 @section('titre')
-    Page Show single action
+    Page Show single Ville
 @endsection
 @if (session('message'))
     <div class="alert alert-success">
@@ -9,21 +9,17 @@
     </div>
 @endif
 @section('contenu')
-    <h2>hello i am showing single action</h2>
-
-    <h4>{{ $action->address }}</h4>
-    <h4>{{ $action->title }}</h4>
-    {{-- <h4>{{ $action->image}}</h4> --}}
-    <h4>{{ $action->content}}</h4>
+    <h2>hello i am showing single ville</h2>
+    <h4>{{ $activity->name }}</h4>
 
 
-    <form action="{{ route('action.edit', ['id' => $action->id]) }}" method="POST">
+    <form action="{{ route('ville.edit', ['id' => $ville->id]) }}" method="POST">
         @csrf
         @method('GET')
         <button type="submit" class="btn btn-primary px-4 mx-1">Update</button>
     </form>
        <br>
-    <form action="{{ route('action.delete', ['id' => $action->id]) }}" method="POST">
+    <form action="{{ route('ville.delete', ['id' => $ville->id]) }}" method="POST">
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger px-4 mx-1">Delete</button>

@@ -38,16 +38,30 @@ class ActionController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'string|required',
-            'type' => 'string|required'
+            'address' => 'string|nullable',
+            'title' => 'string',
+            'image' => 'string',
+            'content' => 'string'
         ]);
 
+
+        // $file = $request->file('image');
+
+        // $extension = $file->getClientOriginalExtension();
+        // $image_name = 'Action_'.time().'.'.$extension;
+
+        // Image::make($file)->save(public_path()."/uploads/".$image_name);
+
+
             $action = new Action();
-            $action->name = $request->name;
-            $action->type = $request->type;
+            $action->address = $request->address;
+            $action->title = $request->title;
+            // $action->image = $image_name;
+            $action->content = $request->content;
 
             $action->save();
         return redirect()->action([ActionController::class, 'index'])->with('message', 'Action Add Successfully!');
+
     }
 
     /**
@@ -85,8 +99,10 @@ class ActionController extends Controller
     public function update(Request $request, $id)
     {
         $action = Action::findOrFail($id);
-        $action->name = $request->name;
-        $action->type = $request->type;
+        $action->address = $request->address;
+        $action->title = $request->title;
+        $action->content = $request->content;
+        // $action->image = $image_name;
         $action->save();
          return redirect()->action(
              [ActionController::class, 'index']

@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rapport;
+use App\Models\Ville;
 use Illuminate\Http\Request;
 
-class RapportController extends Controller
+class VilleController extends Controller
 {
-    /**
+      /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $rapport = Rapport::all();
-        //  dd($rapport);
-        return view('rapport.rapport', compact('rapport'));
+        $ville = Ville::all();
+        //  dd($ville);
+        return view('ville.ville', compact('ville'));
     }
 
     /**
@@ -26,7 +26,7 @@ class RapportController extends Controller
      */
     public function create()
     {
-        return view('rapport.create_rapport');
+        return view('ville.create_ville');
     }
 
     /**
@@ -38,17 +38,15 @@ class RapportController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'annee' => 'integer|required',
-            'fichier' => 'string|required'
+            'name' => 'string|required',
         ]);
 
-            $rapport = new Rapport();
-            $rapport->annee = $request->annee;
-            $rapport->fichier = $request->fichier;
+            $ville = new Ville();
+            $ville->name = $request->name;
 
 
-            $rapport->save();
-        return redirect()->action([RapportController::class, 'index'])->with('message', 'Rapport Add Successfully!');
+            $ville->save();
+        return redirect()->action([VilleController::class, 'index'])->with('message', 'Ville Add Successfully!');
     }
 
     /**
@@ -59,8 +57,8 @@ class RapportController extends Controller
      */
     public function show($id)
     {
-        $rapport = Rapport::findOrFail($id);
-        return view('rapport.show_rapport', compact('rapport'));
+        $ville = Ville::findOrFail($id);
+        return view('ville.show_ville', compact('ville'));
     }
 
     /**
@@ -71,9 +69,9 @@ class RapportController extends Controller
      */
     public function edit($id)
     {
-        $rapport = Rapport::findOrFail($id);
+        $ville = Ville::findOrFail($id);
 
-        return view('rapport.edit_rapport', compact('rapport'));
+        return view('ville.edit_ville', compact('ville'));
     }
 
     /**
@@ -85,13 +83,13 @@ class RapportController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $rapport = Rapport::findOrFail($id);
-        $rapport->name = $request->name;
+        $ville = Ville::findOrFail($id);
+        $ville->name = $request->name;
 
-        $rapport->save();
+        $ville->save();
          return redirect()->action(
-             [RapportController::class, 'index']
-         )->with('message', 'rapport update succefully!');
+             [VilleController::class, 'index']
+         )->with('message', 'ville update successfully!');
     }
 
     /**
@@ -101,11 +99,11 @@ class RapportController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        $rapport = Rapport::findOrFail($id);
-        $rapport->delete();
+    {    $ville = Ville::findOrFail($id);
+        $ville->delete();
         return redirect()->action(
-       [RapportController::class, 'index']
-        )->with('message', 'rapport delete successfully!');
+       [VilleController::class, 'index']
+        )->with('message', 'ville delete successfully!');
+        //
     }
 }
