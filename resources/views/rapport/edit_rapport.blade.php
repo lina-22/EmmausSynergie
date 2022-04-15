@@ -18,8 +18,8 @@
         @csrf
         @method('PUT')
         <div class="mb-3">
-            <label for="name" class="form-label">Annee</label>
-            <input type="text" class="form-control" id="name" name="annee">
+            <label for="annee" class="form-label">Annee</label>
+            <input type="text" class="form-control" id="annee" name="annee">
         </div>
         <div class="mb-3">
             <label for="type" class="form-label">Fichier</label>

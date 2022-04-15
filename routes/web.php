@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ActionController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\PartenaireController;
 use App\Http\Controllers\RapportController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StructureController;
@@ -81,14 +82,17 @@ Route::get('/villes/{id}/edit', [VilleController::class, 'edit'])->name('ville.e
 Route::put('villes/{id}', [VilleController::class, 'update'])->name('ville.update');
 Route::delete('villes/{id}', [VilleController::class, 'destroy'])->name('ville.delete');
 
-// // Route for Partner
-// Route::get('partners', [PartnerController::class, 'index'])->name('partner.all');
-// Route::get('partners/{id}', [PartnerController::class, 'show'])->name('partner.show');
-// Route::post('partners', [PartnerController::class, 'store'])->name('partner.add');
-// Route::get('/partners/create', [PartnerController::class, 'create'])->name('partner.create');
-// Route::get('/partners/{id}/edit', [PartnerController::class, 'edit'])->name('partner.edit');
-// Route::put('partners/{id}', [PartnerController::class, 'update'])->name('partner.update');
-// Route::delete('partners/{id}', [PartnerController::class, 'destroy'])->name('partner.delete');
+
+// Route for Partenaire
+Route::get('partenaires', [PartenaireController::class, 'index'])->name('partenaire.all');
+Route::get('partenaires/create', [PartenaireController::class, 'create'])->name('partenaire.create');
+Route::post('partenaires', [PartenaireController::class, 'store'])->name('partenaire.store');
+Route::get('partenaires/{id}', [PartenaireController::class, 'show'])->name('partenaire.show');
+Route::get('/partenaires/{id}/edit', [PartenaireController::class, 'edit'])->name('partenaire.edit');
+Route::put('partenaires/{id}', [PartenaireController::class, 'update'])->name('partenaire.update');
+Route::delete('partenaires/{id}', [PartenaireController::class, 'destroy'])->name('partenaire.delete');
+
+
 
 // demo extra Route for Structures
 Route::get('structures', [StructureController::class, 'index'])->name('structure.all');

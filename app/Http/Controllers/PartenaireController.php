@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Structure;
+use App\Models\Partenaire;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
-class StructureController extends Controller
+class PartenaireController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,9 @@ class StructureController extends Controller
      */
     public function index()
     {
-        $structure = Structure::all();
-        //  dd($structure);
-        return view('structure.structure', compact('structure'));
+        $partenaire = Partenaire::all();
+        //  dd($partenaire);
+        return view('partenaire.partenaire', compact('partenaire'));
     }
 
     /**
@@ -27,7 +26,7 @@ class StructureController extends Controller
      */
     public function create()
     {
-        return view('structure.create_structure');
+        return view('partenaire.create_partenaire');
     }
 
     /**
@@ -40,15 +39,16 @@ class StructureController extends Controller
     {
         $validated = $request->validate([
             'name' => 'string|required',
-            'type' => 'string|required'
+            'text' => 'string|required'
         ]);
 
-            $structure = new Structure();
-            $structure->name = $request->name;
-            $structure->type = $request->type;
+            $partenaire = new Partenaire();
+            $partenaire->name = $request->name;
+            $partenaire->text = $request->text;
 
-            $structure->save();
-        return redirect()->action([StructureController::class, 'index'])->with('message', 'Structure Add Successfully!');
+
+            $partenaire->save();
+        return redirect()->action([PartenaireController::class, 'index'])->with('message', 'Partenaire Add Successfully!');
     }
 
     /**
@@ -59,8 +59,8 @@ class StructureController extends Controller
      */
     public function show($id)
     {
-        $structure = Structure::findOrFail($id);
-        return view('structure.show_structure', compact('structure'));
+        $partenaire = Partenaire::findOrFail($id);
+        return view('partenaire.show_partenaire', compact('partenaire'));
     }
 
     /**
@@ -71,9 +71,9 @@ class StructureController extends Controller
      */
     public function edit($id)
     {
-        $structure = Structure::findOrFail($id);
+        $partenaire = Partenaire::findOrFail($id);
 
-        return view('structure.edit_structure', compact('structure'));
+        return view('partenaire.edit_partenaire', compact('partenaire'));
     }
 
     /**
@@ -85,13 +85,14 @@ class StructureController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $structure = Structure::findOrFail($id);
-       $structure->name = $request->name;
-       $structure->type = $request->type;
-       $structure->save();
-        return redirect()->action(
-            [StructureController::class, 'index']
-        )->with('message', 'structure update succefully!');
+        $partenaire = Partenaire::findOrFail($id);
+        $partenaire->name = $request->name;
+        $partenaire->text = $request->text;
+
+        $partenaire->save();
+         return redirect()->action(
+             [PartenaireController::class, 'index']
+         )->with('message', 'partenaire update successfully!');
     }
 
     /**
@@ -102,12 +103,10 @@ class StructureController extends Controller
      */
     public function destroy($id)
     {
-        // dd($id)
-        $structure = Structure::findOrFail($id);
-        $structure->delete();
+        $partenaire = Partenaire::findOrFail($id);
+        $partenaire->delete();
         return redirect()->action(
-       [StructureController::class, 'index']
-        )->with('message', 'structure delete successfully!');
+       [PartenaireController::class, 'index']
+        )->with('message', 'partenaire delete successfully!');
     }
-
 }

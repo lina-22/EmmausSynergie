@@ -10,7 +10,8 @@
 @endif
 @section('contenu')
     <h2>hello i am showing single partenaire</h2>
-    <h4>{{ $activity->name }}</h4>
+    <h4>{{ $partenaire->name }}</h4>
+    <h4>{{ $partenaire->text }}</h4>
 
 
     <form action="{{ route('partenaire.edit', ['id' => $partenaire->id]) }}" method="POST">

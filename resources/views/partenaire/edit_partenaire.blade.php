@@ -14,7 +14,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('ville.update',['id'=>$ville->id]) }}" method="post">
+    <form action="{{ route('partenaire.update',['id'=>$partenaire->id]) }}" method="post">
         @csrf
         @method('PUT')
         <div class="mb-3">

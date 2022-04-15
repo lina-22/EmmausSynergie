@@ -86,7 +86,8 @@ class RapportController extends Controller
     public function update(Request $request, $id)
     {
         $rapport = Rapport::findOrFail($id);
-        $rapport->name = $request->name;
+        $rapport->annee = $request->annee;
+        $rapport->fichier = $request->fichier;
 
         $rapport->save();
          return redirect()->action(

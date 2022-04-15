@@ -20,6 +20,23 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
+                        Partenaire
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ route('partenaire.all') }}">Index</a></li>
+                        <li><a class="dropdown-item" href="{{ route('partenaire.create') }}">Create_Partenaire</a></li>
+
+                        <li><a class="dropdown-item" href="#">Another </a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
                         Rapport
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -104,6 +104,6 @@ class VilleController extends Controller
         return redirect()->action(
        [VilleController::class, 'index']
         )->with('message', 'ville delete successfully!');
-        //
+
     }
 }
