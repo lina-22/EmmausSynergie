@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('rapports', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('idActivites')->constrained('activites','id')->onDelete('cascade')->onUpdate('cascade');
             $table->string('annee');
-            $table->string('fichier');
+            $table->string('fichier',500);
             $table->timestamps();
         });
     }
