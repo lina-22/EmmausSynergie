@@ -14,25 +14,49 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('action.store') }}" method="post">
+
+    <div class="mb-3">
+        <label for="idActivities" class="form-label">idActivities</label>
+        <input type="number" class="form-control" id="id" name="idActivities">
+    </div>
+
+    <form action="{{ route('action.store') }}" enctype="multipart/form-data" method="POST">
         @csrf
+
         <div class="mb-3">
-            <label for="address" class="form-label">Address</label>
-            <input type="text" class="form-control" id="address" name="address">
+            <label for="date" class="form-label">DateAction</label>
+            <input type="date" class="form-control" id="date" name="date">
         </div>
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title">
         </div>
-
         <div class="mb-3">
-            <label for="image" class="form-label">Image</label>
-            <input type="image" class="form-control" id="image" name="image">
+            <label for="address" class="form-label">Address</label>
+            <input type="address" class="form-control" id="address" name="address">
         </div>
+
+        {{-- <div class="row mb-2">
+            <label for="image">Image</label>
+            <input name="drapeau" required type="file" accept="image" class="form-control" id="image" placeholder="Rechercher une image">
+            @error("image")
+            <div class="text-danger">{{$message}}</div>
+            @enderror
+        </div> --}}
+
+        {{-- <form action="{{ route('action.store') }}" enctype="multipart/form-data" method="POST">
+            @csrf --}}
+            <input type="text" name="name" placeholder="Image name"><br>
+            <input type="file" name="image"><br>
+
+            {{-- <button> save images</button>
+        </form> --}}
+
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>
             <input type="text" class="form-control" id="content" name="content">
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     @endsection

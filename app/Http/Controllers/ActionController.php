@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Action;
 use Illuminate\Http\Request;
+use Image;
 
 class ActionController extends Controller
 {
@@ -38,25 +39,28 @@ class ActionController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'address' => 'string|nullable',
+            'idActivites' => 'integer',
+            'dateAction' => 'date',
             'title' => 'string',
-            'image' => 'string',
+            'address' => 'string|nullable',
+            'image' => 'image',
             'content' => 'string'
         ]);
 
 
-        // $file = $request->file('image');
-
-        // $extension = $file->getClientOriginalExtension();
-        // $image_name = 'Action_'.time().'.'.$extension;
-
-        // Image::make($file)->save(public_path()."/uploads/".$image_name);
-
+        $file = $request->file('image');
+        // $extension = $file->getClientOriginalExtension();//
+        $extension = $file->getClientOriginalExtension();
+        $image_name = 'Action_'.time().'.'.$extension;
+        Image::make($file)->save(public_path()."/uploads/".$image_name);
 
             $action = new Action();
-            $action->address = $request->address;
+            $action->idActivites = $request->idActivites;
+            // dd($request->idActivites);
+            $action->dateAction = $request->dateAction;
             $action->title = $request->title;
-            // $action->image = $image_name;
+            $action->address = $request->address;
+            $action->image = $image_name;
             $action->content = $request->content;
 
             $action->save();
