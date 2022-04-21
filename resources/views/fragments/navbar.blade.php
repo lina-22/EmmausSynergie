@@ -1,6 +1,21 @@
+<head>
+        <link rel="stylesheet" href="<?php echo asset('cssFile/style.css')?>" type="text/css">
+</head>
+<div id="logoDesign">
+    <section>
+        <img id="logoImg" src="img/emmausLogo.PNG" alt="">
+    </section>
+    <section id="contactIcon">
+        <img class="contactIcon" src="img/telephone-fill.svg" alt="">
+        <img class="contactIcon" src="img/envelope-plus-fill.svg" alt="">
+        <img class="contactIcon" src="img/person-lines-fill.svg" alt="">
+    </section>
+</div>
+<hr>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Emmaus Synergie</a>
+        {{-- <a class="navbar-brand" href="#">Emmaus Synergie</a> --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -14,6 +29,41 @@
                     <a class="nav-link" href="#">Histoire</a>
                 </li>
 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Activite
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ route('activity.all') }}">Index</a></li>
+                        <li><a class="dropdown-item" href="{{ route('activity.create') }}">Create_Activity</a></li>
+
+                        <li><a class="dropdown-item" href="#">Another </a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Action
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ route('action.all') }}">Index</a></li>
+                        <li><a class="dropdown-item" href="{{ route('action.create') }}">Create_Action</a></li>
+
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+
+
                 {{-- <li class="nav-item">
             <a class="nav-link" href="#">Activite</a> --}}
 
@@ -24,7 +74,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ route('partenaire.all') }}">Index</a></li>
-                        <li><a class="dropdown-item" href="{{ route('partenaire.create') }}">Create_Partenaire</a></li>
+                        <li><a class="dropdown-item" href="{{ route('partenaire.create') }}">Create_Partenaire</a>
+                        </li>
 
                         <li><a class="dropdown-item" href="#">Another </a></li>
                         <li>
@@ -67,39 +118,6 @@
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Activite
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('activity.all') }}">Index</a></li>
-                        <li><a class="dropdown-item" href="{{ route('activity.create') }}">Create_Activity</a></li>
-
-                        <li><a class="dropdown-item" href="#">Another </a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Action
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('action.all') }}">Index</a></li>
-                        <li><a class="dropdown-item" href="{{ route('action.create') }}">Create_Action</a></li>
-
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
 
 
                 <li class="nav-item dropdown">
@@ -109,7 +127,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{ route('structure.all') }}">Index</a></li>
-                        <li><a class="dropdown-item" href="{{ route('structure.create') }}">Create_Structure</a></li>
+                        <li><a class="dropdown-item" href="{{ route('structure.create') }}">Create_Structure</a>
+                        </li>
                         {{-- <li><a class="dropdown-item" href="{{route('structure.show')}}">Show_Structure</a></li> --}}
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li>
@@ -126,3 +145,11 @@
         </div>
     </div>
 </nav>
+
+<script>
+#logoDesign{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(246, 223, 24);
+}
+</script>

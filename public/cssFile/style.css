@@ -1,0 +1,24 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/* .main{
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-left: 250px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(89, 3, 20);
+} */
+#logoDesign{
+    display: flex;
+    justify-content: space-around;
+    /* background-color: rgb(246, 223, 24); */
+
+}
+
+.right{
+    padding-top: 450px;
+}

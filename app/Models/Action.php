@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Action extends Model
 {
     use HasFactory;
+
+    public function Activity(){
+        return $this->belongsTo(Activity::class);
+    }
+
 }

@@ -1,12 +1,5 @@
 <?php
 
-use App\Http\Controllers\ActionController;
-use App\Http\Controllers\ActivityController;
-use App\Http\Controllers\PartenaireController;
-use App\Http\Controllers\RapportController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\StructureController;
-use App\Http\Controllers\VilleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +12,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 
 // Route::get('/', function () {
 //     return view('welcome');

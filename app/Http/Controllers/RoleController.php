@@ -27,7 +27,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('create_role');
+        return view('role.create_role');
     }
 
     /**
@@ -36,19 +36,16 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'string|required'
+        $validated = $request->validate([
+            'name' => 'string|required',
         ]);
-        if ($validator->fails()) {
-            $res['message'] = $validator->errors()->first();
-        } else {
             $role = new Role();
             $role->name = $request->name;
-
             $role->save();
-        }
+
         return redirect()->action([RoleController::class, 'index'])->with('message', 'Role Add Successfully!');
     }
 

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Rapport extends Model
 {
     use HasFactory;
+    public function activity(){
+        return $this->belongsto(Activity::class);
+    }
 }
