@@ -9,15 +9,18 @@ class Activity extends Model
 {
     use HasFactory;
 
-    public function Ville(){
+    public function Users(){
+        return $this-> belongsToMany(User::class,'activity_users');
+    }
+    public function Villes(){
         return $this-> belongsTo(Ville::class);
     }
 
-    public function Action(){
+    public function Actions(){
         return $this->hasMany(Action::class);
     }
 
-    public function Rapport(){
+    public function Rapports(){
         return $this->hasMany(Rapport::class);
     }
 }

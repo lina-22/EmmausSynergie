@@ -43,7 +43,7 @@ class User extends Authenticatable
     ];
 
     public function activity(){
-        return $this-> belongsToMany(Activity::class,'');
+        return $this-> belongsToMany(Activity::class,'activity_users');
     }
 
     public function role(){
