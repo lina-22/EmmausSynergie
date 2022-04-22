@@ -41,7 +41,8 @@ class DatabaseSeeder extends Seeder
     $customer= Role::create(['name'=>'customer']);
 
     $user= User::create(['idRoles'=>1,'firstName'=>'this is a name','lastName'=>'xxxxxx','email'=>'secretariat@emmaus-synergie.fr','password'=>bcrypt('emmaussynergie1')]);
-
+    $user= User::create(['idRoles'=>1,'firstName'=>'kaisan','lastName'=>'sayed','email'=>'kaisan@gmail.com','password'=>bcrypt('kaisan@gmail.com1')]);
+    $me = User::create(['idRoles'=>2,'firstName'=>'kashif','lastName'=>'sayed','email'=>'kashif@gmail.com','password'=>bcrypt('kashif@gmail.com1')]);
     $me = User::create(['idRoles'=>3,'firstName'=>'fahinur','lastName'=>'haq','email'=>'fahinur@gmail.com','password'=>bcrypt('fahinur@gmail.com1')]);
 
     $ville1=Ville::create(['name'=>'Villiers Sur Marne']);

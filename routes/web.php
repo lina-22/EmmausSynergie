@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RapportController;
+use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ActionController;
 use App\Http\Controllers\VilleController;
-
+use App\Http\Controllers\PartenaireController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,13 +50,13 @@ Route::put('roles/{id}', [RoleController::class, 'update'])->name('role.update')
 Route::delete('roles/{id}', [RoleController::class, 'destroy'])->name('role.delete');
 
 // Route for users
-// Route::get('users', [UserController::class, 'index'])->name('user.all');
-// Route::get('users/{id}', [UserController::class, 'show'])->name('user.show');
-// Route::post('users', [UserController::class, 'store'])->name('user.add');
-// Route::get('/users/create', [UserController::class, 'create'])->name('user.create');
-// Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
-// Route::put('users/{id}', [UserController::class, 'update'])->name('user.update');
-// Route::delete('users/{id}', [UserController::class, 'destroy'])->name('user.delete');
+Route::get('users', [UserController::class, 'index'])->name('user.all');
+Route::get('users/{id}', [UserController::class, 'show'])->name('user.show');
+Route::post('users', [UserController::class, 'store'])->name('user.add');
+Route::get('/users/create', [UserController::class, 'create'])->name('user.create');
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::put('users/{id}', [UserController::class, 'update'])->name('user.update');
+Route::delete('users/{id}', [UserController::class, 'destroy'])->name('user.delete');
 
 // Route for Rapport
 Route::get('rapports', [RapportController::class, 'index'])->name('rapport.all');
