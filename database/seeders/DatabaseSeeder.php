@@ -42,9 +42,13 @@ class DatabaseSeeder extends Seeder
 
     $user= User::create(['idRoles'=>1,'firstName'=>'this is a name','lastName'=>'xxxxxx','email'=>'secretariat@emmaus-synergie.fr','password'=>bcrypt('emmaussynergie1')]);
 
+    $me = User::create(['idRoles'=>3,'firstName'=>'fahinur','lastName'=>'haq','email'=>'fahinur@gmail.com','password'=>bcrypt('fahinur@gmail.com1')]);
+
     $ville1=Ville::create(['name'=>'Villiers Sur Marne']);
     $ville3=Ville::create(['name'=>'Plessis Trevise']);
     $ville2=Ville::create(['name'=>'La Queue en Brie']);
     $ville4=Ville::create(['name'=>'Bry sur Marne']);
+
+
 }
 }

@@ -15,13 +15,15 @@
         </div>
     @endif
 
-    <div class="mb-3">
-        <label for="idActivities" class="form-label">idActivities</label>
-        <input type="number" class="form-control" id="id" name="idActivities">
-    </div>
+
 
     <form action="{{ route('action.store') }}" enctype="multipart/form-data" method="POST">
         @csrf
+
+        <div class="mb-3">
+            <label for="idActivities" class="form-label">idActivities</label>
+            <input type="number" class="form-control" id="id" name="idActivities">
+        </div>
 
         <div class="mb-3">
             <label for="date" class="form-label">DateAction</label>

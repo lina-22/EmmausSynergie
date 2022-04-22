@@ -38,8 +38,9 @@ class ActionController extends Controller
      */
     public function store(Request $request)
     {
+    //   dd($request);
         $validated = $request->validate([
-            'idActivites' => 'integer',
+            'idActivities' => 'integer',
             'dateAction' => 'date',
             'title' => 'string',
             'address' => 'string|nullable',
@@ -55,8 +56,8 @@ class ActionController extends Controller
         Image::make($file)->save(public_path()."/uploads/".$image_name);
 
             $action = new Action();
-            $action->idActivites = $request->idActivites;
-            // dd($request->idActivites);
+            $action->idActivites = $request->idActivities;
+            // dd($request->idActivities);
             $action->dateAction = $request->dateAction;
             $action->title = $request->title;
             $action->address = $request->address;

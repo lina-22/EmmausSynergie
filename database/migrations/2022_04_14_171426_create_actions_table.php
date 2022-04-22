@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('actions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('idActivites')->constrained('activites','id')->onDelete('cascade')->onUpdate('cascade');
-            $table->date('dateAction');
+            $table->date('dateAction')->nullable();
             $table->string('title',150);
             $table->string('address',250)->nullable();
             $table->string('image')->nullable();
