@@ -11,6 +11,7 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
+        "mews/captcha": "^3.2",
         "phpmailer/phpmailer": "^6.6"
     },
     "require-dev": {

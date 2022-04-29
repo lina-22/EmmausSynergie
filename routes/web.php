@@ -7,6 +7,7 @@ use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ActionController;
 use App\Http\Controllers\VilleController;
 use App\Http\Controllers\PartenaireController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,7 +34,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/admin',function(){return view("dashboardAdmin2022");})->middleware('admin');
+Route::get('/inscription',function(){return view("inscription");});
 
+Route::get('/contact',[Controller::class,"contactForm"]);
+Route::post('/contact',[Controller::class,"envoyerEmail"]);
+
+Route::get('refreshcaptcha',[Controller::class, 'refreshCaptcha'])->name('refreshcaptcha');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
