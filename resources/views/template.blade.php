@@ -25,6 +25,7 @@
 @endif
 
 </div>
+
      @include("fragments.footer")
 <script src="{{asset("js/notif.js")}}"></script>
 </body>

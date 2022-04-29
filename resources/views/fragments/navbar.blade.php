@@ -1,15 +1,23 @@
 <head>
-        <link rel="stylesheet" href="<?php echo asset('cssFile/style.css')?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo asset('cssFile/style.css'); ?>" type="text/css">
 </head>
-<div id="logoDesign">
-    <section>
-        <img id="logoImg" src="img/emmausLogo.PNG" alt="">
-    </section>
-    <section id="contactIcon">
-        <img class="contactIcon" src="img/telephone-fill.svg" alt="">
-        <img class="contactIcon" src="img/envelope-plus-fill.svg" alt="">
-        <img class="contactIcon" src="img/person-lines-fill.svg" alt="">
-    </section>
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="logoImg" class="col-lg-4 align-self-start">
+
+                <img  id="logoDesign" src="img/emmausLogo.PNG" alt="">
+
+        </div>
+        <div class="col-lg-8" id="lconArea">
+
+                <img class="contactIcon" src="img/telephone-fill.svg" alt="">
+                <img class="contactIcon" src="img/envelope-plus-fill.svg" alt="">
+                <img class="contactIcon" src="img/person-lines-fill.svg" alt="">
+
+        </div>
+        </div>
+    </div>
 </div>
 <hr>
 
@@ -38,7 +46,7 @@
                         <li><a class="dropdown-item" href="{{ route('activity.all') }}">Index</a></li>
                         <li><a class="dropdown-item" href="{{ route('activity.create') }}">Create_Activity</a></li>
 
-                        <li><a class="dropdown-item" href="#">Another </a></li>
+                        <li><a class="dropdown-item" href="/FormContact/inscription">Inscription </a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -145,11 +153,3 @@
         </div>
     </div>
 </nav>
-
-<script>
-#logoDesign{
-    display: flex;
-    justify-content: space-around;
-    background-color: rgb(246, 223, 24);
-}
-</script>

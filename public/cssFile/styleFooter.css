@@ -1,0 +1,43 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.right {
+    padding-top: 450px;
+}
+
+#logoDesign {
+    background-color: rgb(246, 117, 24);
+      padding-left: 0px;
+    margin-left: 0px;
+}
+
+#logoArea{
+    display: flex;
+    justify-content: space-between;
+}
+
+#lconArea{
+    display: flex;
+    justify-content: end;
+
+}
+
+#foot_logo{
+    width: 70px;
+    height: 60px;
+    padding-left: 10px;
+}
+#logoImg_val{
+    width: 100px;
+    height: 100px;
+
+}
+
+#contact_inf{
+    background-color: gray;
+    background-color: rgba(0,0,0,0.2);
+}

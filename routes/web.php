@@ -32,7 +32,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/admin',function(){return view("dashboardAdmin");})->middleware('admin');
+Route::get('/admin',function(){return view("dashboardAdmin2022");})->middleware('admin');
 
 // Route::get('/', function () {
 //     return view('welcome');
