@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('activity_users', function (Blueprint $table) {
 
             // $table->id();
-            $table->foreignId('activity_id')->constrained('activities');
+            $table->foreignId('idVilles')->constrained('ville','id')->onDelete('cascade');
             $table->foreignId('user_id')->constrained('users');
             $table->primary(['activity_id', 'user_id']);
             $table->timestamps();

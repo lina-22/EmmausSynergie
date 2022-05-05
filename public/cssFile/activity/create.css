@@ -1,0 +1,9 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    /* background-color: rgb(203, 212, 209); */
+}
+.activity{
+    background-color: rgb(31, 138, 99);
+}

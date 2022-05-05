@@ -88,6 +88,7 @@ class ActivityController extends Controller
         $activity = Activity::findOrFail($id);
         $activity->name = $request->name;
         $activity->type = $request->type;
+        // $activity->idVilles = $request->idVilles;
         $activity->save();
          return redirect()->action(
              [ActivityController::class, 'index']
