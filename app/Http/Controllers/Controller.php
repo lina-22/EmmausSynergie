@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function accueil(){
+        return view("welcomeEmmaus");
+    }
+    public function histoire(){
+        return view("histoire");
+    }
     public function contactForm(){
         return view("email.formulaire");
     }

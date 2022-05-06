@@ -9,8 +9,6 @@
     <a class="btn btn-info mb-2" href="{{ route('activity.create') }}">Ajouter une nouvelle activite</a>
     <table class="table">
 
-
-
         <table class="table table-dark">
             <thead>
                 <thead>
@@ -44,9 +42,6 @@
                             </div>
                         </td>
                     </tr>
-            </tbody>
-        </table>
-        </div>
         @endforeach
 
         </tbody>

@@ -26,10 +26,13 @@
 
                     <form action="{{ route('activity.store') }}" method="post">
                         @csrf
+
                         <div class="mb-3">
                             <label for="idVille" class="form-label">idVille</label>
-                            <input type="text" class="form-control" id="idVille" name="idVille">
+                            <input type="number" class="form-control" id="id" name="idVille">
                         </div>
+
+
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" name="name">

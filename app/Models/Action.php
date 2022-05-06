@@ -9,6 +9,8 @@ class Action extends Model
 {
     use HasFactory;
 
+    protected $fillable=['idActivites','dateAction','title','address','image','content'];
+
     public function Activity(){
         return $this->belongsTo(Activity::class);
     }

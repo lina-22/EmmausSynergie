@@ -38,6 +38,8 @@ Route::get('/inscription',function(){return view("inscription");});
 
 Route::get('/contact',[Controller::class,"contactForm"]);
 Route::post('/contact',[Controller::class,"envoyerEmail"]);
+Route::get('/histoire',[Controller::class,"histoire"]);
+Route::get('/accueil',[Controller::class,"accueil"]);
 
 Route::get('refreshcaptcha',[Controller::class, 'refreshCaptcha'])->name('refreshcaptcha');
 // Route::get('/', function () {
@@ -45,6 +47,9 @@ Route::get('refreshcaptcha',[Controller::class, 'refreshCaptcha'])->name('refres
 // });
 Route::get('/', function () {
     return view('welcomeEmmaus');
+});
+Route::get('/histoire', function () {
+    return view('histoire');
 });
 // Route for roles
 Route::get('roles', [RoleController::class, 'index'])->name('role.all');

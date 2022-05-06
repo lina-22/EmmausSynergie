@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     use HasFactory;
+    protected $fillable=['idVilles','type','name',];
 
     public function Users(){
         return $this-> belongsToMany(User::class,'activity_users');
