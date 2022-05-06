@@ -14,15 +14,22 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('rapport.store') }}" method="post">
+    <form action="{{ route('rapport.store') }}" method="post" enctype="multipart/form-data" >
         @csrf
+
+        <select class="form-control" id="id" name="idActivites">
+            @foreach ($activities as $oneactivity )
+              <option value="{{$oneactivity->id}}">{{$oneactivity->name}}:{{$oneactivity->type}}</option>
+            @endforeach
+        </select>
         <div class="mb-3">
             <label for="annee" class="form-label">annee</label>
             <input type="annee" class="form-control" id="annee" name="annee">
         </div>
         <div class="mb-3">
+
             <label for="fichier" class="form-label">fichier</label>
-            <textarea name="fichier" id="fichier" class="form-control" rows="5"></textarea>
+            <input name="fichier" id="fichier" class="form-control" type="file">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

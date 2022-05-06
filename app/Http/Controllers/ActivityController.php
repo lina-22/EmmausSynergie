@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Ville;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,7 +28,7 @@ class ActivityController extends Controller
      */
     public function create()
     {
-        return view('activity.create_activity');
+        return view('activity.create_activity',["villes"=>Ville::all()]);
     }
 
     /**
@@ -46,6 +47,7 @@ class ActivityController extends Controller
             $activity = new Activity();
             $activity->name = $request->name;
             $activity->type = $request->type;
+            $activity->idVilles = $request->idVilles;
 
             $activity->save();
         return redirect()->action([ActivityController::class, 'index'])->with('message', 'Activity Add Successfully!');

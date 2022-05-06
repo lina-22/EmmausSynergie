@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use App\Models\Rapport;
 use Illuminate\Http\Request;
 
@@ -22,11 +23,11 @@ class RapportController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response A
      */
     public function create()
     {
-        return view('rapport.create_rapport');
+        return view('rapport.create_rapport', ["activities"=>Activity::all()]);
     }
 
     /**
@@ -39,13 +40,13 @@ class RapportController extends Controller
     {
         $validated = $request->validate([
             'annee' => 'integer|required',
-            'fichier' => 'string|required'
+            'fichier' => 'required'
         ]);
-
+            $path = $request->file("fichier")->store("rapports");
             $rapport = new Rapport();
             $rapport->annee = $request->annee;
-            $rapport->fichier = $request->fichier;
-
+            $rapport->fichier = $path;
+            $rapport->idActivites = $request->idActivites;
 
             $rapport->save();
         return redirect()->action([RapportController::class, 'index'])->with('message', 'Rapport Add Successfully!');
@@ -73,7 +74,7 @@ class RapportController extends Controller
     {
         $rapport = Rapport::findOrFail($id);
 
-        return view('rapport.edit_rapport', compact('rapport'));
+        return view('rapport.edit_rapport', ["activities"=>Activity::all(), "rapport"=>$rapport]);
     }
 
     /**
@@ -85,9 +86,18 @@ class RapportController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'annee' => 'integer|required',
+            'fichier' => 'required',
+            'idActivites' =>'required|exists:activities,id'
+        ]);
         $rapport = Rapport::findOrFail($id);
+        // dd($rapport);
         $rapport->annee = $request->annee;
-        $rapport->fichier = $request->fichier;
+        if(isset($request->fichier))
+        { $path = $request->file("fichier")->store("rapports");
+            $rapport->fichier = $path;
+        }
 
         $rapport->save();
          return redirect()->action(

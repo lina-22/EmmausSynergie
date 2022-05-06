@@ -10,7 +10,7 @@
 @endif
 @section('contenu')
     <h2>hello i am showing single ville</h2>
-    <h4>{{ $activity->name }}</h4>
+    <h4>{{ $ville->name }}</h4>
 
 
     <form action="{{ route('ville.edit', ['id' => $ville->id]) }}" method="POST">

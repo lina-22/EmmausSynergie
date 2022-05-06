@@ -32,10 +32,10 @@
                         <td>{{ $oneRapport->id }}</td>
                         <td>{{ $oneRapport->idActivites }}</td>
                         <td>{{ $oneRapport->annee}}</td>
-                        <td>{{ $oneRapport->fichier}}</td>
+                        <td>{{ $oneRapport->fichier}}<a href="/storage/{{$oneRapport->fichier}}">Download</a></td>
                         <td class="col-4 col-lg-3">
 
-                            <div class="row">
+                            {{-- <div class="row">
                                 <a class="btn btn-primary col mx-2" href="">Modifier</a>
 
                                 <form class="col row mx-2" action="(rapports/{id})" method="post">
@@ -44,7 +44,19 @@
                                     <input type="hidden" name="id">
                                     <button class="btn btn-primary">Supprimer</button>
                                 </form>
-                            </div>
+                            </div> --}}
+
+                                <form action="{{ route('rapport.edit', ['id' => $oneRapport->id]) }}" method="POST">
+                                @csrf
+                                @method('GET')
+                                <button type="submit" class="btn btn-primary px-4 mx-1">Update</button>
+                            </form>
+                               <br>
+                            <form action="{{ route('rapport.delete', ['id' => $oneRapport->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger px-4 mx-1">Delete</button>
+                            </form>
                         </td>
                     </tr>
         @endforeach

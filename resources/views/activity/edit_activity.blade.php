@@ -2,8 +2,6 @@
 @section('titre')
     Page Create oneStructure
 @endsection
-@section('contenu')
-    <h1>Edit Activity</h1>
 
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -14,6 +12,9 @@
             </ul>
         </div>
     @endif
+    @section('contenu')
+    <h1>Edit Activity</h1>
+
     <form action="{{ route('activity.update',['id'=>$activity->id]) }}" method="post">
         @csrf
         @method('PUT')

@@ -2,19 +2,19 @@
 @section('titre')
     Page Create oneAction
 @endsection
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 @section('contenu')
     <h1>create Action</h1>
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
 
 
     <form action="{{ route('action.store') }}" enctype="multipart/form-data" method="POST">
@@ -22,7 +22,11 @@
 
         <div class="mb-3">
             <label for="idActivities" class="form-label">idActivities</label>
-            <input type="number" class="form-control" id="id" name="idActivities">
+            <select class="form-control" id="id" name="idActivities">
+                @foreach ($activities as $oneactivity )
+                  <option value="{{$oneactivity->id}}">{{$oneactivity->name}}:{{$oneactivity->type}}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class="mb-3">
@@ -41,17 +45,17 @@
         {{-- <div class="row mb-2">
             <label for="image">Image</label>
             <input name="drapeau" required type="file" accept="image" class="form-control" id="image" placeholder="Rechercher une image">
-            @error("image")
+            @error('image')
             <div class="text-danger">{{$message}}</div>
             @enderror
         </div> --}}
 
         {{-- <form action="{{ route('action.store') }}" enctype="multipart/form-data" method="POST">
             @csrf --}}
-            <input type="text" name="name" placeholder="Image name"><br>
-            <input type="file" name="image"><br>
+        <input type="text" name="name" placeholder="Image name"><br>
+        <input type="file" name="image"><br>
 
-            {{-- <button> save images</button>
+        {{-- <button> save images</button>
         </form> --}}
 
         <div class="mb-3">
@@ -61,5 +65,4 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    @endsection
-
+@endsection

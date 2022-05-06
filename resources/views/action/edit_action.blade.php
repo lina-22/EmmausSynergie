@@ -2,9 +2,6 @@
 @section('titre')
     Page Create oneStructure
 @endsection
-@section('contenu')
-    <h1>create Action</h1>
-
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -15,24 +12,35 @@
         </div>
     @endif
 
-    <form action="{{ route('action.store') }}" method="post">
+    @section('contenu')
+    <h1>Update Action</h1>
+    <form action="{{ route('action.store') }}" enctype="multipart/form-data" method="POST">
         @csrf
+
         <div class="mb-3">
-            <label for="name" class="form-label">Address</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <label for="idActivities" class="form-label">idActivities</label>
+            <input type="number" class="form-control" id="id" name="idActivities">
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">DateAction</label>
+            <input type="date" class="form-control" id="date" name="date">
         </div>
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <textarea name="title" id="title" class="form-control" rows="5"></textarea>
+            <input type="text" class="form-control" id="title" name="title">
         </div>
         <div class="mb-3">
-            <label for="image" class="form-label">Image</label>
-            <input type="image" class="form-control" id="image" name="image">
+            <label for="address" class="form-label">Address</label>
+            <input type="address" class="form-control" id="address" name="address">
         </div>
+            <input type="text" name="name" placeholder="Image name"><br>
+            <input type="file" name="image"><br>
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>
-            <input type="content" class="form-control" id="name" name="content">
+            <input type="text" class="form-control" id="content" name="content">
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     @endsection

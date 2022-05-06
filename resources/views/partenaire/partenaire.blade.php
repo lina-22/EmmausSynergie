@@ -36,13 +36,16 @@
                         <td class="col-4 col-lg-3">
 
                             <div class="row">
-                                <a class="btn btn-primary col mx-2" href="">Modifier</a>
-
-                                <form class="col row mx-2" action="(rapports/{id})" method="post">
+                                <form action="{{ route('partenaire.edit', ['id' => $onePartenaire->id]) }}" method="POST">
                                     @csrf
-                                    @method("delete")
-                                    <input type="hidden" name="id">
-                                    <button class="btn btn-primary">Supprimer</button>
+                                    @method('GET')
+                                    <button type="submit" class="btn btn-primary px-4 mx-1">Update</button>
+                                </form>
+                                   <br>
+                                <form action="{{ route('partenaire.delete', ['id' => $onePartenaire->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger px-4 mx-1">Delete</button>
                                 </form>
                             </div>
                         </td>

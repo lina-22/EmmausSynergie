@@ -11,7 +11,7 @@
         </div>
         <div class="col-lg-8" id="lconArea">
 
-                <img class="contactIcon" src="img/telephone-fill.svg" alt="">
+                <img class="contactIcon" src="{{asset('img/telephone-fill.svg')}}" alt="">
                 <img class="contactIcon" src="img/envelope-plus-fill.svg" alt="">
                 <img class="contactIcon" src="img/person-lines-fill.svg" alt="">
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Action;
+use App\Models\Activity;
 use Illuminate\Http\Request;
 use Image;
 
@@ -27,7 +28,7 @@ class ActionController extends Controller
      */
     public function create()
     {
-        return view('action.create_action');
+        return view('action.create_action',["activities"=>Activity::all()]);
     }
 
     /**

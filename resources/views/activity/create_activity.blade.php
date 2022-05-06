@@ -6,18 +6,18 @@
 @section('titre')
     Page Create oneStructure
 @endsection
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 @section('contenu')
     <h1>create Activity</h1>
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
     <div class="continer">
         <div class="row">
@@ -29,7 +29,14 @@
 
                         <div class="mb-3">
                             <label for="idVille" class="form-label">idVille</label>
-                            <input type="number" class="form-control" id="id" name="idVille">
+                            <select class="form-control" id="id" name="idVilles">
+                                <option disabled selected value="">Select a city</option>
+                             @foreach ($villes as $oneville )
+                                <option value="{{$oneville->id}}">{{$oneville->name}}</option>
+
+                              @endforeach
+                          </select>
+
                         </div>
 
 
@@ -45,6 +52,6 @@
                     </form>
                 </div>
             </div>
-         </div>
+        </div>
     </div>
-    @endsection
+@endsection

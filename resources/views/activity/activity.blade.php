@@ -14,8 +14,8 @@
                 <thead>
                     <tr>
                         <th>Id</td>
-                        <th>TYPE</td>
                         <th> VILLE NAME</td>
+                        <th>TYPE</td>
                         <th>ID VILLE</td>
                         <th>IF NEED</td>
                     </tr>
@@ -31,9 +31,9 @@
                         <td class="col-4 col-lg-3">
 
                             <div class="row">
-                                <a class="btn btn-primary col mx-2" href="{{ route('activity.all') }}">Modifier</a>
+                                <a class="btn btn-primary col mx-2" href="{{ route('activity.edit', ['id' => $oneActivity->id]) }}">Modifier</a>
 
-                                <form class="col row mx-2" action="(activites/{id})" method="post">
+                                <form class="col row mx-2" action="{{ route('activity.delete', ['id' => $oneActivity->id]) }}" method="post">
                                     @csrf
                                     @method("delete")
                                     <input type="hidden" name="id">

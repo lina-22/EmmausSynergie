@@ -44,16 +44,17 @@
                         <td>{{ $oneaction->content }}</td>
                         <td class="col-4 col-lg-3">
 
-                            <div class="row">
-                                <a class="btn btn-primary col mx-2" href="actions/{id}/edit">Modifier</a>
-
-                                <form class="col row mx-2" action="(action/{id})" method="post">
-                                    @csrf
-                                    @method("delete")
-                                    <input type="hidden" name="id">
-                                    <button class="btn btn-primary">Supprimer</button>
-
-                                </form>
+                            <form action="{{ route('action.edit', ['id' => $oneaction->id]) }}" method="POST">
+                                @csrf
+                                @method('GET')
+                                <button type="submit" class="btn btn-primary px-4 mx-1">Update</button>
+                            </form>
+                               <br>
+                            <form action="{{ route('action.delete', ['id' => $oneaction->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger px-4 mx-1">Delete</button>
+                            </form>
                             </div>
                         </td>
                     </tr>
