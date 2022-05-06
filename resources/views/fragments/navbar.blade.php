@@ -6,14 +6,14 @@
     <div class="row">
         <div id="logoImg" class="col-lg-4 align-self-start">
 
-                <img  id="logoDesign" src="img/emmausLogo.PNG" alt="">
+                <img  id="logoDesign" src="{{asset('img/emmausLogo.PNG')}}"  alt="">
 
         </div>
         <div class="col-lg-8" id="lconArea">
 
                 <img class="contactIcon" src="{{asset('img/telephone-fill.svg')}}" alt="">
-                <img class="contactIcon" src="img/envelope-plus-fill.svg" alt="">
-                <img class="contactIcon" src="img/person-lines-fill.svg" alt="">
+                <img class="contactIcon" src="{{asset('img/envelope-plus-fill.svg')}}" alt="">
+                <img class="contactIcon" src="{{asset('img/person-lines-fill.svg')}}" alt="">
 
         </div>
 

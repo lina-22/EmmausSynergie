@@ -5,7 +5,7 @@
     <div id="contact_inf" class="card-group bg-grey">
         <div class="card">
             <div class="card-body"  bg-grey>
-                <img src="img/emmausLogo.PNG" id="foot_logo" class="img-top" alt="...">
+                <img src="{{asset('img/emmausLogo.PNG')}}" id="foot_logo" class="img-top" alt="...">
                 <h5 class="card-title">ADDRESS POSTALE</h5>
                 <p class="card-text">44 Avenue Lecomte</p> <br>
                 <p class="card-text"> N° SIRET: 44501098600021</p>
@@ -29,7 +29,7 @@
                     {{-- <button class="btn btn-outline-success" type="submit">Search</button> --}}
                 </form> <br>
 
-                <img id="logoImg_val" src="img/Val_Marne_logo.PNG" alt="">
+                <img id="logoImg_val" src="{{asset('img/Val_Marne_logo.PNG')}}"  alt="">
             </div>
         </div>
         </div>
