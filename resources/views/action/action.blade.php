@@ -26,9 +26,9 @@
                     <th> DATE ACTIONS</td>
                     <th>TITLE</td>
                     <th>ADDRESS</td>
-                    <th>IMAGE</td>
-                    <th>CONTENT</td>
-                    <th>IF NEED</td>
+                        <th>CONTENT</td>
+                            <th>IMAGE</td>
+                    <th>ACTION</td>
                 </tr>
             </thead>
             <tbody>
@@ -40,10 +40,11 @@
                         <td>{{ $oneaction->dateAction }}</td>
                         <td>{{ $oneaction->title }}</td>
                         <td>{{ $oneaction->address }}</td>
-                        <td>{{ $oneaction->image }}</td>
                         <td>{{ $oneaction->content }}</td>
-                        <td class="col-4 col-lg-3">
+                        <td><img src="/uploads/{{ $oneaction->image }}></td>
 
+                        <td class="col-4 col-lg-3">
+                            <div class="row">
                             <form action="{{ route('action.edit', ['id' => $oneaction->id]) }}" method="POST">
                                 @csrf
                                 @method('GET')

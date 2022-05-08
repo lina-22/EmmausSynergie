@@ -58,7 +58,7 @@ class ActionController extends Controller
 
             $action = new Action();
             $action->idActivites = $request->idActivities;
-            // dd($request->idActivities);
+        //    dd($request->idActivities);
             $action->dateAction = $request->dateAction;
             $action->title = $request->title;
             $action->address = $request->address;
@@ -103,11 +103,20 @@ class ActionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {    $validated = $request->validate([
+
+        'dateAction' => 'date',
+        'title' => 'string',
+        'address' => 'string|nullable',
+        'image' => 'image',
+        'content' => 'string',
+        'idActivites' =>'required|exists:activities,id'
+    ]);
         $action = Action::findOrFail($id);
         $action->address = $request->address;
         $action->title = $request->title;
         $action->content = $request->content;
+
         // $action->image = $image_name;
         $action->save();
          return redirect()->action(

@@ -27,6 +27,7 @@
                   <option value="{{$oneactivity->id}}">{{$oneactivity->name}}:{{$oneactivity->type}}</option>
                 @endforeach
             </select>
+
         </div>
 
         <div class="mb-3">
