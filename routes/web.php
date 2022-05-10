@@ -35,6 +35,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/admin',function(){return view("dashboardAdmin2022");})->middleware('admin');
 Route::get('/inscription',function(){return view("inscription");});
+Route::get('/autoecole',function(){return view("autoecole");});
 
 Route::get('/contact',[Controller::class,"contactForm"]);
 Route::post('/contact',[Controller::class,"envoyerEmail"]);
