@@ -39,7 +39,7 @@
                                 <form action="{{ route('partenaire.edit', ['id' => $onePartenaire->id]) }}" method="POST">
                                     @csrf
                                     @method('GET')
-                                    <button type="submit" class="btn btn-primary px-4 mx-1">Update</button>
+                                    <button type="submit" class="btn btn-primary mb-4 px-4 mx-1">Update</button>
                                 </form>
                                    <br>
                                 <form action="{{ route('partenaire.delete', ['id' => $onePartenaire->id]) }}" method="POST">

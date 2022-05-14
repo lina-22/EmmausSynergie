@@ -34,7 +34,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/admin',function(){return view("dashboardAdmin2022");})->middleware('admin');
-Route::get('/inscription',function(){return view("inscription");});
+// Route::get('/inscription',function(){return view("inscription");}); this page no need use laravel registration form
 
 Route::get('/contact',[Controller::class,"contactForm"]);
 Route::post('/contact',[Controller::class,"envoyerEmail"]);

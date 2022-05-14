@@ -46,13 +46,13 @@
                             <form action="{{ route('activity.edit', ['id' => $oneActivity->id]) }}" method="POST">
                                 @csrf
                                 @method('GET')
-                                <button type="submit" class="btn btn-primary px-4 mx-1">Update</button>
+                                <button type="submit" class="btn btn-primary mb-2 px-4 mx-1">Update</button>
                             </form>
                                <br>
                             <form action="{{ route('activity.delete', ['id' => $oneActivity->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger px-4 mx-1">Delete</button>
+                                <button type="submit" class="btn btn-danger mb-2 px-4 mx-1">Delete</button>
                             </form>
                             </div>
                         </td>

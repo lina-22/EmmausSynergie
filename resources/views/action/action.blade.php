@@ -1,4 +1,4 @@
-@extends("template")
+@extends('template')
 
 @section('titre')
     Page Show single action
@@ -26,8 +26,8 @@
                     <th> DATE ACTIONS</td>
                     <th>TITLE</td>
                     <th>ADDRESS</td>
-                        <th>CONTENT</td>
-                            <th>IMAGE</td>
+                    <th>CONTENT</td>
+                    <th>IMAGE</td>
                     <th>ACTION</td>
                 </tr>
             </thead>
@@ -36,26 +36,26 @@
                     <tr class="table-active">
                     <tr>
                         <td>{{ $oneaction->id }}</td>
-                        <td>{{ $oneaction->idActivities }}</td>
+                        <td>{{ $oneaction->idActivites }}</td>
                         <td>{{ $oneaction->dateAction }}</td>
                         <td>{{ $oneaction->title }}</td>
                         <td>{{ $oneaction->address }}</td>
                         <td>{{ $oneaction->content }}</td>
-                        <td><img src="/uploads/{{ $oneaction->image }}></td>
+                        <td><img width="100%" src="{{ asset('/uploads') }}/{{ $oneaction->image }}" alt=""></td>
 
                         <td class="col-4 col-lg-3">
                             <div class="row">
-                            <form action="{{ route('action.edit', ['id' => $oneaction->id]) }}" method="POST">
-                                @csrf
-                                @method('GET')
-                                <button type="submit" class="btn btn-primary px-4 mx-1">Update</button>
-                            </form>
-                               <br>
-                            <form action="{{ route('action.delete', ['id' => $oneaction->id]) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger px-4 mx-1">Delete</button>
-                            </form>
+                                <form action="{{ route('action.edit', ['id' => $oneaction->id]) }}" method="POST">
+                                    @csrf
+                                    @method('GET')
+                                    <button type="submit" class="btn btn-primary px-4 mb-2 mx-1">Update</button>
+                                </form>
+                                <br>
+                                <form action="{{ route('action.delete', ['id' => $oneaction->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger px-4 mx-1">Delete</button>
+                                </form>
                             </div>
                         </td>
                     </tr>
@@ -64,3 +64,17 @@
             </tbody>
         </table>
     @endsection
+
+
+
+
+
+                        {{-- <td>
+                            <div class="row"> --}}
+                                {{-- @foreach ($action as $oneaction) --}}
+                                    {{-- <div class="col-md-3">
+                                        <img width="100%" src="{{ asset('/uploads') }}/{{ $oneaction->image }}" alt="">
+                                    </div> --}}
+                                {{-- @endforeach --}}
+                            {{-- </div>
+                        </td> --}}

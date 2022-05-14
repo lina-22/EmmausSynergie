@@ -41,7 +41,7 @@ class ActionController extends Controller
     {
     //   dd($request);
         $validated = $request->validate([
-            'idActivities' => 'integer',
+            // 'idActivities' => 'integer',
             'dateAction' => 'date',
             'title' => 'string',
             'address' => 'string|nullable',
@@ -58,7 +58,7 @@ class ActionController extends Controller
 
             $action = new Action();
             $action->idActivites = $request->idActivities;
-        //    dd($request->idActivities);
+        //   dd($request->idActivities);
             $action->dateAction = $request->dateAction;
             $action->title = $request->title;
             $action->address = $request->address;
@@ -92,7 +92,7 @@ class ActionController extends Controller
     {
         $action = Action::findOrFail($id);
 
-        return view('action.edit_action', compact('action'));
+        return view('action.edit_action', ["activities"=>Activity::all(), "action"=>$action]);
     }
 
     /**

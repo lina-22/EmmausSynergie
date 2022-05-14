@@ -35,7 +35,7 @@
                                 <form action="{{ route('ville.edit', ['id' => $oneVille->id]) }}" method="POST">
                                     @csrf
                                     @method('GET')
-                                    <button type="submit" class="btn btn-primary px-4 mx-1">Update</button>
+                                    <button type="submit" class="btn btn-primary mb-4 px-4 mx-1">Update</button>
                                 </form>
                                    <br>
                                 <form action="{{ route('ville.delete', ['id' => $oneVille->id]) }}" method="POST">
