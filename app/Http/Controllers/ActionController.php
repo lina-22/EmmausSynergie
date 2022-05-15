@@ -28,7 +28,7 @@ class ActionController extends Controller
      */
     public function create()
     {
-        return view('action.create_action',["activities"=>Activity::all()]);
+        return view('action.create_action',["activites"=>Activity::all()]);
     }
 
     /**
@@ -41,7 +41,7 @@ class ActionController extends Controller
     {
     //   dd($request);
         $validated = $request->validate([
-            // 'idActivities' => 'integer',
+            'idActivites' => 'integer|required',
             'dateAction' => 'date',
             'title' => 'string',
             'address' => 'string|nullable',
@@ -57,7 +57,7 @@ class ActionController extends Controller
         Image::make($file)->save(public_path()."/uploads/".$image_name);
 
             $action = new Action();
-            $action->idActivites = $request->idActivities;
+            $action->idActivites = $request->idActivites;
         //   dd($request->idActivities);
             $action->dateAction = $request->dateAction;
             $action->title = $request->title;
@@ -114,10 +114,23 @@ class ActionController extends Controller
     ]);
         $action = Action::findOrFail($id);
         $action->address = $request->address;
+        $action->dateAction = $request->dateAction;
         $action->title = $request->title;
         $action->content = $request->content;
 
-        // $action->image = $image_name;
+        $file = $request->file('image');
+        // $extension = $file->getClientOriginalExtension();//
+        if($file){
+            if( file_exists(public_path()."/uploads/".$action->image) ){
+                @unlink(public_path()."/uploads/".$action->image);
+            }
+            $extension = $file->getClientOriginalExtension();
+            $image_name = 'Action_'.time().'.'.$extension;
+            Image::make($file)->save(public_path()."/uploads/".$image_name);
+
+            $action->image = $image_name;
+        }
+
         $action->save();
          return redirect()->action(
              [ActionController::class, 'index']

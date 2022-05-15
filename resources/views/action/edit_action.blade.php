@@ -27,7 +27,7 @@
         </select>
         <div class="mb-3">
             <label for="date" class="form-label">DateAction</label>
-            <input type="date" class="form-control" id="date" name="date">
+            <input type="date" class="form-control" id="date" name="dateAction">
         </div>
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>

@@ -20,6 +20,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*
+//This ****** Lines **** Noted **** for ****Lina
+
+   Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/inscription',function(){return view("inscription");}); this page no need use laravel registration form
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+http://127.0.0.1:8000/register  This is for doing a registration
+http://127.0.0.1:8000/login  This is for doing a login
+http://127.0.0.1:8000/contact  This is for sending email with captcha
+
+|This ****** Lines **** Noted **** for ****Lina
+*/
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,17 +52,16 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/admin',function(){return view("dashboardAdmin2022");})->middleware('admin');
-// Route::get('/inscription',function(){return view("inscription");}); this page no need use laravel registration form
 
+
+// /contact is use for the sending email with captcha
 Route::get('/contact',[Controller::class,"contactForm"]);
 Route::post('/contact',[Controller::class,"envoyerEmail"]);
 Route::get('/histoire',[Controller::class,"histoire"]);
 Route::get('/accueil',[Controller::class,"accueil"]);
 
 Route::get('refreshcaptcha',[Controller::class, 'refreshCaptcha'])->name('refreshcaptcha');
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 Route::get('/', function () {
     return view('welcomeEmmaus');
 });
@@ -116,3 +133,8 @@ Route::get('partenaires/{id}', [PartenaireController::class, 'show'])->name('par
 Route::get('/partenaires/{id}/edit', [PartenaireController::class, 'edit'])->name('partenaire.edit');
 Route::put('partenaires/{id}', [PartenaireController::class, 'update'])->name('partenaire.update');
 Route::delete('partenaires/{id}', [PartenaireController::class, 'destroy'])->name('partenaire.delete');
+
+
+// Route::middleware('Admin')->group(function(){
+// just put here those files will be used by admin/superAdmin
+// });

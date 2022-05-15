@@ -28,7 +28,7 @@
 
         <div class="mb-3">
             <label for="date" class="form-label">DateAction</label>
-            <input type="date" class="form-control" id="date" name="date">
+            <input type="date" class="form-control" id="date" name="dateAction">
         </div>
          {{-- 14/05 --}}
         <div class="mb-3">
