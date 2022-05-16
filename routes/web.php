@@ -68,6 +68,9 @@ Route::get('/', function () {
 Route::get('/histoire', function () {
     return view('histoire');
 });
+Route::get('/autoecole', function () {
+    return view('autoecole');
+});
 // Route for roles
 Route::get('roles', [RoleController::class, 'index'])->name('role.all');
 Route::post('roles', [RoleController::class, 'store'])->name('role.store');

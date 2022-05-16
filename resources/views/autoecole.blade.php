@@ -1,25 +1,25 @@
 <head>
     <link rel="stylesheet" href="<?php echo asset('cssFile/styles.css'); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo asset('cssFile/autoStyle.css'); ?>" type="text/css">
 </head>
 @extends("template")
 @section('titre')
     Auto ecole
 @endsection
 @section('contenu')
-    <!-- 2nd section: -->
+    <!-- first section: -->
     <html>
 
     <body>
 
         <div class="mx-auto col-sm-12 col-md-6">
             <h1>AUTO ECOLE EMMAÜS SYNERGIE</h1>
-            <p>à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son
-                inclusion dans des applications de mise en page de texte, comme Aldus PageMaker à la vente de
-                feuilles
-                Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son</p>
+            <p>L'auto-école EMMAUS SUNERGIE a ouvert ces portes en septembre 2019.<br> En tant qu'auto-école sociale nous avons vocation a permettre à des personnes qui n'aurais pas la possibilité <br>de passé leurs permis de conduite sur une auto école
+                classique de faire cedtte formation chez nous .
+            </p>
         </div>
 
-        <!-- 3rd section carousel -->
+        <!-- 2nd section carousel -->
         <div>
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="padding-top: 100px"
                 style="padding-bottom:50px">
@@ -53,111 +53,90 @@
                 </div>
             </div>
         </div>
-
-        <div class="mx-auto col-sm-12 col-md-6">
-            <h1>AUTO ECOLE EMMAÜS SYNERGIE</h1>
-            <p>à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son
-                inclusion dans des applications de mise en page de texte, comme Aldus PageMaker à la vente de
-                feuilles
-                Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son</p>
+         {{-- 3rd section start --}}
+        <div class="mx-auto col-sm-12 col-md-6" style="padding-top: 100px;">
+            <h2>NOS BENIFICIAIRES</h2>
+            <h3>PAS D'INSCRIPTION MAIS DES PREINSCRIPTIONS</h3>
+            <p>En effet, tous nos bénificiares ont été orienté par une structure d'accompagnement locale ( Mission locale, Assistante sociale, Educateur...).<br> Chaque candidature est étudiée en détail afin de déterminer si la personne peut intégrer notre
+                dispositif de formation.<br> Les rentrées de formation s'éffectues par groupe afin de faciliter les apprentissages grâce aux intéractions .
+            </p>
         </div>
 
         {{-- 4th section start --}}
-
-        
+        <div class="max-auto col-sm-12 col-md-6" style="padding-top: 100px;">
+            <h2>NOTRE FORMATION</h2>
+        </div>
+        <section class="title-2">
+        <div class="mx-auto col-sm-12 col-md-6" style="padding-top: 80px;">
+            <h4>COURS DE CODE EN PRESENTIEL</h4>
+        </div>
+       </section>
+         {{-- 5th section start --}}
         <div class="second_landing">
             <div class="row p-t" style="padding-top: 100px;">
                 <div class="col-sm-12 col-md-5">
-                    <img id="abbe" src="{{ asset('img/abbePhoto.PNG') }}" class="img-fluid" alt=""> 
+                    <img id="abbe" src="{{ asset('img/auto1.PNG') }}" class="img-fluid" alt="">
                 </div>
-                <div class="mx-auto col-sm-12 col-md-6">
-                    <h1>AUTO ECOLE EMMAÜS SYNERGIE</h1>
-                    <p>à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son
-                        inclusion dans des applications de mise en page de texte, comme Aldus PageMaker à la vente de
-                        feuilles
-                        Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son</p>
+                <div class="mx-auto col-sm-12 col-md-6" >
+
+                    <p>Pendant plusieures mois les bénificaires assistent à plusieures cours de codes en groupe dispensée par un enseigant de la conduite.</p>
                 </div>
             </div>
         </div>
+             {{-- 6th section start --}}
+             <section class="title-2">
+        <div class="mx-auto col-sm-12 col-md-6" style="padding-top: 50px;">
+            <h5>PROGRAMME DE CONDUITE EN SIMULATEUR</h5>
+        </div>
+    </section>
 
-
-
+          {{-- 7th section start --}}
         <div class="second_landing">
             <div class="row p-t" style="padding-top: 100px;">
 
                 <div class="mx-auto col-sm-12 col-md-6">
-                    <h1>AUTO ECOLE EMMAÜS SYNERGIE</h1>
-                    <p>à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son
-                        inclusion dans des applications de mise en page de texte, comme Aldus PageMaker à la vente de
-                        feuilles
-                        Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son</p>
+                    <p>Une fois la code en poche, les apprenants éffectuent un programme de leçons sur notre simulateur de conduite.<br> C’est une premiére approche de régle de base de la conduite:<br> Tenue de volant, passage de vitesse, changement de direction
+                        , dépassement...</p>
                 </div>
 
                 <div class="col-sm-12 col-md-5">
-                    <img id="abbe" src="{{ asset('img/abbePhoto.PNG') }}" class="img-fluid" alt=""> 
+                    <img id="abbe" src="{{ asset('img/auto2.PNG') }}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
 
+                      {{-- 8th section start --}}
+                      <section class="title-2">
+        <div class="mx-auto col-sm-12 col-md-6" style="padding-top: 100px;">
+
+            <h3>COURS DE CONDUITE EN VEHICULE</h3>
+        </div>
+    </section>
+        {{-- 9th section start --}}
         <div class="second_landing">
             <div class="row p-t" style="padding-top: 100px;">
                 <div class="col-sm-12 col-md-5">
-                    <img id="abbe" src="{{ asset('img/abbePhoto.PNG') }}" class="img-fluid" alt=""> 
+                    <img id="abbe" src="{{ asset('img/imageauto.PNG') }}" class="img-fluid" alt="">
                 </div>
                 <div class="mx-auto col-sm-12 col-md-6">
-                    <h1>AUTO ECOLE EMMAÜS SYNERGIE</h1>
-                    <p>à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son
-                        inclusion dans des applications de mise en page de texte, comme Aldus PageMaker à la vente de
-                        feuilles
-                        Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son</p>
+
+                    <p>L’apprenant éffectue des heures de conuite avec le moniteur agrée dans un véhicule automatique ou manuel.<br> l’objectif est de préparer l’apprenant au mieux à l’examen de conduite.</p>
                 </div>
             </div>
         </div>
+         {{-- 10th section start --}}
+        <div class="last_landing">
+            <div class="row p-t" style="margin: 100px;">
 
-        <div class="mx-auto col-sm-12 col-md-6">
-            <h2>AUTO ECOLE EMMAÜS SYNERGIE</h2>
-            <h3>Pas d'inscription mais des prescription</h3>
-            <p>à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son
-                inclusion dans des applications de mise en page de texte, comme Aldus PageMaker à la vente de
-                feuilles
-                Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son</p>
-        </div>
-
-        <div class="second_landing">
-            <div class="row p-t" style="padding-top: 100px;">
-
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <h3>EQUIPE DE PREVENTION SPECIALISEE</h3>
-                    <br>
-                    <p> l’association Emmaus-synergie dispose d’un service de
-                        prévention spécialisée
-
-                        composé d’une équipe de direction et de huit
-                        éducateurs de rues.
-
-                        Ces profotionels interviennet sur quatres téritoire</p>
+                <div class="mx-auto col-sm-12 col-md-6">
+                    <h4>
+                        ACCOMPAGNEMENT SOCIO PROFESSIONEL
+                    </h4>
+                    <p>En parraléle de la formation permis de conduire l’apprenant bénificie d’un accompagnement<br> pour l’aidé dans ces démarches sociale ,administratif de soutien de formation et prefossionel ...</p>
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <img id="abbe" src="{{ asset('img/image6.jpg') }}" class="d-block w-10 h-10" alt="">
-                </div>
-            </div>
-        </div>
 
-        {{-- 5th section start --}}
-
-        <div class="fifth_landing">
-            <div class="row p-t" style="padding-top: 100px;">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <img id="abbe" src="{{ asset('img/image5.jpg') }}" class="d-block w-10 h-10" alt="">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <h3>AUTO-ECOLE SOCIALE</h3>
-                    <br>
-                    <p>
-                        L’association Emmaus-synergie dispose d’une auto-école
-                        sociale composé
-
-                        d’un enseigant de la conduite et d’un compagant social</p>
+                <div class="col-sm-12 col-md-5">
+                    <img id="abbe" src="{{ asset('img/auto4.PNG') }}" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
