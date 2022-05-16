@@ -74,6 +74,12 @@ Route::get('/autoecole', function () {
 Route::get('/nosPartenaires', function () {
     return view('nosPartenaires');
 });
+Route::get('/equipe', function () {
+    return view('equipe');
+});
+Route::get('/nosAction', function () {
+    return view('nosAction');
+});
 // Route for roles
 Route::get('roles', [RoleController::class, 'index'])->name('role.all');
 Route::post('roles', [RoleController::class, 'store'])->name('role.store');

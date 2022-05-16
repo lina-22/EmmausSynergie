@@ -18,3 +18,8 @@
     color: aliceblue;
 
 }
+
+.action_landing{
+    text-align: justify;
+    display: flex;
+}
