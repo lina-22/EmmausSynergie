@@ -32,9 +32,9 @@ class DatabaseSeeder extends Seeder
 
     ]);
 
-    $rapport1= Rapport::create(['idActivites'=>1, 'annee'=>'2019','fichier'=>'fichier1','idActivites'=>1]);
-    $rapport2= Rapport::create(['idActivites'=>1, 'annee'=>'2021','fichier'=>'fichier2','idActivites'=>1]);
-    $rapport3= Rapport::create(['idActivites'=>1, 'annee'=>'2022','fichier'=>'fichier3','idActivites'=>1]);
+    $rapport1= Rapport::create(['idActivites'=>1, 'annee'=>2019,'fichier'=>'fichier1','idActivites'=>1]);
+    $rapport2= Rapport::create(['idActivites'=>1, 'annee'=>2021,'fichier'=>'fichier2','idActivites'=>1]);
+    $rapport3= Rapport::create(['idActivites'=>1, 'annee'=>2022,'fichier'=>'fichier3','idActivites'=>1]);
 
     $superAdmin= Role::create(['name'=>'superAdmin']);
     $admin= Role::create(['name'=>'admin']);
