@@ -9,8 +9,8 @@
     </div>
 @endif
 @section('contenu')
-    <h2>hello i am showing All ville</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil itaque provident laborum, exercitationem vel sint nisi neque minus suscipit architecto molestias quisquam magni eveniet nesciunt incidunt fugit. Quod, adipisci.</p>
+    {{-- <h2>hello i am showing All ville</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nihil itaque provident laborum, exercitationem vel sint nisi neque minus suscipit architecto molestias quisquam magni eveniet nesciunt incidunt fugit. Quod, adipisci.</p> --}}
     <a class="btn btn-info mb-2" href="{{ route('ville.create') }}">Ajouter une nouvelle ville</a>
     <table class="table">
 
